@@ -28,7 +28,7 @@ attr_reader :id
   end
   
   def self.create(name:, grade:)
-    Student.new(name, grade)
+    new(name, grade).tap {|student| student.save}
   end
     
 end
