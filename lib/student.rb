@@ -16,7 +16,10 @@ attr_reader :id
   end
   
   def self.drop_table
-    
+    sql = <<-SQL
+    CREATE TABLE students(id integer PRIMARY KEY, name TEXT, grade integer)
+    SQL
+    DB[:conn].execute(sql)
   end
   
   def save
