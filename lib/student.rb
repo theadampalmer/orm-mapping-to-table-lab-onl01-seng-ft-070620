@@ -16,10 +16,7 @@ attr_reader :id
   end
   
   def self.drop_table
-    sql = <<-SQL
-    DROP TABLE students(id integer PRIMARY KEY, name TEXT, grade integer)
-    SQL
-    DB[:conn].execute(sql)
+    DB[:conn].execute("DROP TABLE students;")
   end
   
   def save
